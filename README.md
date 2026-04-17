@@ -18,6 +18,7 @@
    - fields-service: https://github.com/AgroScience-Team/field-and-crops#readme
    - profiles-service: https://github.com/AgroScience-Team/profiles-service#readme
    - meteo-service: https://github.com/AgroScience-Team/meteo-service#readme
+   - dzz-service: локальный сервис `agro-dzz-service`
     
 3. Из корневой папки приложения `api-gateway`:
 
