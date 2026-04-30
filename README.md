@@ -1,27 +1,24 @@
-# API gateway
-Прокси-сервер в "Цифровом двойнике".
+# agro-api-gateway
 
-## Разработано с помощью:
+Nginx gateway для маршрутизации запросов между фронтендом и микросервисами платформы.
+
+## Стек
 - Nginx
-- Docker
+- Docker / Docker Compose
 
-## Сборка и запуск проекта:
-    git clone https://github.com/AgroScience-Team/api-gateway.git
+## Быстрый запуск
+```bash
+docker network create agronetwork 2>/dev/null || true
+docker compose up -d --build
+```
 
-1. Создать docker network:
+Gateway будет доступен по адресу `http://localhost:8080`.
 
-        docker network create agronetwork
-
-2. Развернуть каждый микросервис:
-
-   - auth-service: https://github.com/AgroScience-Team/auth-service#readme
-   - fields-service: https://github.com/AgroScience-Team/field-and-crops#readme
-   - profiles-service: https://github.com/AgroScience-Team/profiles-service#readme
-   - meteo-service: https://github.com/AgroScience-Team/meteo-service#readme
-   - dzz-service: локальный сервис `agro-dzz-service`
-    
-3. Из корневой папки приложения `api-gateway`:
-
-        docker compose up -d
-
-Расположение: `localhost:8080`
+## Маршруты
+Основные префиксы:
+- `/api/auth`
+- `/api/profiles`
+- `/api/fields-service`
+- `/api/meteo`
+- `/api/dzz`
+- `/api/analytics`
